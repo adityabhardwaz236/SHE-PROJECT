@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap");
+
+/* =====================================================
+   MOBILE-FIRST HEADER
+   These are the default phone styles
+===================================================== */
+
+.site-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 66px !important;
+  padding: 0 14px !important;
+  gap: 12px !important;
+  overflow: visible !important;
+  background: #3a2418 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.site-header .brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: fit-content !important;
+  min-width: 0 !important;
+  gap: 9px !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.site-header .brand-emblem {
+  display: grid !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  padding: 0 !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: 50% !important;
+  background: #f8f1e5 !important;
+}
+
+.site-header .brand-emblem img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+}
+
+.site-header .brand-copy {
+  display: flex !important;
+  min-width: 0 !important;
+  align-items: flex-start !important;
+  flex-direction: column !important;
+}
+
+.site-header .brand-copy strong {
+  color: #ffffff !important;
+  font-family: "EB Garamond", Garamond, Georgia, serif !important;
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  line-height: 0.85 !important;
+  letter-spacing: 0.1em !important;
+}
+
+.site-header .brand-copy small {
+  margin-top: 6px !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-family: "EB Garamond", Garamond, Georgia, serif !important;
+  font-size: 7px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+}
+
+.site-header .menu-toggle {
+  position: relative !important;
+  z-index: 10002 !important;
+  display: grid !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  padding: 0 !important;
+  place-content: center !important;
+  gap: 6px !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 2px !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  cursor: pointer !important;
+}
+
+.site-header .menu-toggle span {
+  display: block !important;
+  width: 19px !important;
+  height: 1.5px !important;
+  background: #ffffff !important;
+  transition:
+    transform 220ms ease,
+    opacity 220ms ease !important;
+}
+
+.site-header .menu-toggle.is-open span:first-child {
+  transform: translateY(3.75px) rotate(45deg) !important;
+}
+
+.site-header .menu-toggle.is-open span:last-child {
+  transform: translateY(-3.75px) rotate(-45deg) !important;
+}
+
+.site-header .nav-links {
+  position: absolute !important;
+  top: 100% !important;
+  right: 0 !important;
+  left: 0 !important;
+  z-index: 10000 !important;
+  display: none !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-height: calc(100dvh - 66px) !important;
+  margin: 0 !important;
+  padding: 5px 0 !important;
+  overflow-y: auto !important;
+  border-bottom: 1px solid rgba(58, 36, 24, 0.18) !important;
+  background: #fbf8f2 !important;
+  box-shadow: 0 14px 30px rgba(29, 17, 12, 0.18) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.site-header .nav-links.open {
+  display: flex !important;
+  align-items: stretch !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.site-header .nav-links a {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 12px 18px !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(58, 36, 24, 0.08) !important;
+  background: transparent !important;
+  color: #2d180b !important;
+  font-family: "EB Garamond", Garamond, Georgia, serif !important;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.03em !important;
+  text-align: left !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+}
+
+.site-header .nav-links a:last-child {
+  border-bottom: 0 !important;
+}
+
+.site-header .nav-links a.active,
+.site-header .nav-links a:hover {
+  color: #aa7d59 !important;
+  background: rgba(170, 125, 89, 0.08) !important;
+}
+
+.site-header .nav-links a::after {
+  display: none !important;
+}
+
+.site-header .header-cta {
+  display: none !important;
+}
+
+/* =====================================================
+   TABLET AND DESKTOP
+   Runs when the screen is 821px or wider
+===================================================== */
+
+@media (min-width: 821px) {
+  .site-header {
+    grid-template-columns: auto minmax(0, 1fr) auto !important;
+    min-height: 92px !important;
+    padding: 14px clamp(22px, 5vw, 78px) !important;
+    gap: clamp(24px, 3vw, 42px) !important;
+  }
+
+  .site-header .brand-emblem {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+  }
+
+  .site-header .brand-copy strong {
+    font-size: 38px !important;
+  }
+
+  .site-header .brand-copy small {
+    font-size: 10px !important;
+  }
+
+  .site-header .menu-toggle {
+    display: none !important;
+  }
+
+  .site-header .nav-links,
+  .site-header .nav-links.open {
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: row !important;
+    width: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
+    gap: clamp(25px, 3vw, 50px) !important;
+    overflow: visible !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .site-header .nav-links a {
+    width: auto !important;
+    padding: 10px 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    font-size: 16px !important;
+    letter-spacing: 0.08em !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+  }
+
+  .site-header .nav-links a.active,
+  .site-header .nav-links a:hover {
+    color: #d8c1a7 !important;
+    background: transparent !important;
+  }
+
+  .site-header .header-cta {
+    display: inline-flex !important;
+    min-height: 50px !important;
+    padding: 14px 22px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    background: #ffffff !important;
+    color: #3a2418 !important;
+
+  }
+  
+}
