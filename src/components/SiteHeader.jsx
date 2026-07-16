@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
 
 const navigation = [
   { label: "Home", to: "/" },
-  { label: "Our Story", to: "/our-story" },
+  { label: "Our Story", to: "/story" },
   { label: "Services", to: "/services" },
   { label: "Gallery", to: "/gallery" },
   { label: "Contact", to: "/contact" },
@@ -11,11 +10,6 @@ const navigation = [
 
 export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
 
   useEffect(() => {
     const closeWithEscape = (event) => {
@@ -33,16 +27,16 @@ export default function SiteHeader() {
 
   return (
     <header className={`site-header ${menuOpen ? "menu-is-open" : ""}`}>
-      <Link to="/" className="brand" aria-label="SHE Makeup Studio home">
+      <a href="/" className="brand" aria-label="SHE Makeup Studio home">
         <span className="brand-emblem">
           <img src="/she-logo.jpeg" alt="SHE Makeup Studio logo" />
         </span>
 
         <span className="brand-copy">
           <strong>SHE</strong>
-          <small>Makeup Studio</small>
+          <small>Salon & Make-up Studio</small>
         </span>
-      </Link>
+      </a>
 
       <button
         type="button"
@@ -62,21 +56,20 @@ export default function SiteHeader() {
         aria-label="Main navigation"
       >
         {navigation.map((item) => (
-          <NavLink
+          <a
             key={item.to}
-            to={item.to}
-            end={item.to === "/"}
-            className={({ isActive }) => (isActive ? "active" : "")}
+            href={item.to}
+            className="nav-link"
             onClick={() => setMenuOpen(false)}
           >
             {item.label}
-          </NavLink>
+          </a>
         ))}
       </nav>
 
-      <Link to="/contact#booking" className="header-cta">
+      <a href="/contact#booking" className="header-cta">
         Book now <span aria-hidden="true">→</span>
-      </Link>
+      </a>
     </header>
   );
 }

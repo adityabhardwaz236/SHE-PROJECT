@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./SiteFooter.css";
 export default function SiteFooter() {
   const year = new Date().getFullYear();
@@ -11,11 +10,11 @@ export default function SiteFooter() {
             <h3>Explore</h3>
 
             <nav className="footer-links" aria-label="Footer navigation">
-              <Link to="/">Home</Link>
-              <Link to="/our-story">Our Story</Link>
-              <Link to="/services">Services</Link>
-              <Link to="/gallery">Gallery</Link>
-              <Link to="/contact">Contact Us</Link>
+              <a href="/">Home</a>
+              <a href="/story">Our Story</a>
+              <a href="/services">Services</a>
+              <a href="/gallery">Gallery</a>
+              <a href="/contact">Contact Us</a>
             </nav>
           </section>
 
@@ -23,7 +22,7 @@ export default function SiteFooter() {
             <h3>Contact Us</h3>
 
             <div className="footer-links">
-              <Link to="/contact#booking">Book an Appointment</Link>
+              <a href="/contact#booking">Book an Appointment</a>
 
               {/* Replace the number below with the studio WhatsApp number */}
               <a
@@ -99,9 +98,9 @@ export default function SiteFooter() {
           </p>
 
           <div className="footer-legal">
-            <Link to="/privacy-policy">Privacy Policy</Link>
+            <a href="/privacy-policy">Privacy Policy</a>
             <span aria-hidden="true">|</span>
-            <Link to="/terms">Terms &amp; Conditions</Link>
+            <a href="/terms">Terms &amp; Conditions</a>
           </div>
         </div>
       </div>

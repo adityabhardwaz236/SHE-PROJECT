@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./Home.css";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
@@ -103,12 +102,12 @@ export default function Home() {
             care and an eye for every detail.
           </p>
           <div className="hero-actions">
-            <Link className="button button-dark" to="/contact">
+            <a className="button button-dark" href="/contact">
               Book an appointment <ArrowIcon />
-            </Link>
-            <Link className="text-link" to="/gallery">
+            </a>
+            <a className="text-link" href="/gallery">
               Explore our work <ArrowIcon />
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -172,16 +171,9 @@ export default function Home() {
             shaped around your features, comfort and personal style. The result
             is considered, effortless and unmistakably you.
           </p>
-          <Link className="text-link" to="/story">
+          <a className="text-link" href="/story">
             Discover our story <ArrowIcon />
-          </Link>
-        </div>
-        <div className="story-image story-image-detail">
-          <img
-            src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=88"
-            alt="A curated collection of professional makeup"
-            loading="lazy"
-          />
+          </a>
         </div>
       </section>
 
@@ -214,17 +206,17 @@ export default function Home() {
               <div className="service-body">
                 <h3>{service.title}</h3>
                 <p>{service.text}</p>
-                <Link to="/services" aria-label={`Explore ${service.title}`}>
+                <a href="/services" aria-label={`Explore ${service.title}`}>
                   <ArrowIcon />
-                </Link>
+                </a>
               </div>
             </article>
           ))}
         </div>
 
-        <Link className="button button-outline" to="/services">
+        <a className="button button-outline" href="/services">
           View all services <ArrowIcon />
-        </Link>
+        </a>
       </section>
 
       <section className="experience-section">
@@ -249,9 +241,9 @@ export default function Home() {
             <li><span>03</span> High-performance professional products</li>
             <li><span>04</span> Finishing guidance for lasting wear</li>
           </ul>
-          <Link className="button button-light" to="/contact">
+          <a className="button button-light" href="/contact">
             Plan your visit <ArrowIcon />
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -261,9 +253,9 @@ export default function Home() {
             <p className="eyebrow">Inside our world</p>
             <h2>#SheStudio</h2>
           </div>
-          <Link className="text-link" to="/gallery">
+          <a className="text-link" href="/gallery">
             View the full gallery <ArrowIcon />
-          </Link>
+          </a>
         </div>
 
         <div className="gallery-grid">
@@ -294,9 +286,9 @@ export default function Home() {
             Tell us about your occasion, preferred style and date. Our team will
             help you choose the right service and appointment.
           </p>
-          <Link className="button button-light" to="/contact">
+          <a className="button button-light" href="/contact">
             Book a consultation <ArrowIcon />
-          </Link>
+          </a>
         </div>
         <div className="booking-image">
           <img
@@ -309,9 +301,9 @@ export default function Home() {
 
       <SiteFooter />
 
-      <Link className="floating-book" to="/contact">
+      <a className="floating-book" href="/contact">
         <span>Book</span><ArrowIcon />
-      </Link>
+      </a>
     </main>
   );
 }

@@ -630,9 +630,10 @@
 .gallery-item-6 { grid-row: 3 / 4; }
 
 .promise-section {
-  padding: clamp(100px, 13vw, 190px) 25px;
+  padding: clamp(80px, 10vw, 160px) 25px;
   background: var(--paper);
   text-align: center;
+  position: relative;
 }
 
 .promise-mark {
@@ -652,6 +653,38 @@
   font-size: clamp(40px, 5.3vw, 79px);
   font-style: italic;
   line-height: 1.05;
+}
+
+.promise-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 48%;
+  background-image: url('/images/she-salon-interior.webp');
+  background-size: cover;
+  background-position: center left;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.promise-section blockquote {
+  position: relative;
+  padding-left: clamp(28px, 4vw, 48px);
+}
+
+.promise-section blockquote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8%;
+  bottom: 8%;
+  width: 4px;
+  background: linear-gradient(180deg, rgba(91,56,39,0.9), rgba(91,56,39,0.6));
+  border-radius: 2px;
+  transform: translateX(-12px);
+  opacity: 0.95;
 }
 
 .promise-note {
@@ -701,6 +734,11 @@
   object-fit: cover;
   object-position: center top;
   filter: saturate(0.72);
+}
+
+@media (max-width: 900px) {
+  .promise-section::before { display: none; }
+  .promise-section { padding: clamp(40px, 8vw, 80px) 18px; }
 }
 
 /* Use shared SiteFooter styles from global styles.css; removed duplicate rules */
@@ -988,6 +1026,26 @@
 
   .service-card .service-image {
     min-height: 350px;
+  }
+
+  .experience-section {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-image {
+    min-height: 420px;
+  }
+
+  .experience-image img {
+    width: 100%;
+  }
+
+  .experience-copy {
+    padding: 42px 20px 50px;
+  }
+
+  .experience-copy ul {
+    margin: 32px 0;
   }
 
   .section-aside {
